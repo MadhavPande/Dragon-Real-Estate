@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Real Estate</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="interview_score3" placeholder="CRIM" required="required" /><br>
+      	<input type="text" name="experience" placeholder="ZN" required="required" /><br>
+        <input type="text" name="test_score" placeholder="INDUS" required="required" /><br>
+        <input type="text" name="interview_score5" placeholder="CHAS" required="required" /><br>
+        <input type="text" name="interview_score7"  placeholder="NOX" required="required" /><br>
+        <input type="text" name="interview_score8" placeholder="RM" required="required" /><br><input type="text" name="interview_score9" placeholder="AGE" required="required" /><br><input type="text" name="interview_score10" placeholder="DIS" required="required" /><br><input type="text" name="interview_score11" placeholder="RAD" required="required" /><br><input type="text" name="interview_score12" placeholder="TAX" required="required" /><br><input type="text" name="interview_score13" placeholder="PTRATIO" required="required" /><br><input type="text" name="interview_score14" placeholder="B" required="required" /><br><input type="text" name="interview_score15" placeholder="LTSTAT" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
