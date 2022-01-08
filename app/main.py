@@ -36,4 +36,4 @@ def predict_api():
 
 
 def run():
-    app.run(debug=True)
+    app.run()
