@@ -9,7 +9,7 @@ model = joblib.load('app/Dragon.joblib')
 @app.route('/')
 def home():
     #return 'Hello World'
-    return render_template('home.html')
+    return render_template('app/templates/home.html')
     #return render_template('index.html')
 
 @app.route('/predict',methods = ['POST'])
@@ -20,7 +20,7 @@ def predict():
     print(prediction[0])
 
     #output = round(prediction[0], 2)
-    return render_template('home.html', prediction_text="MEDV {}".format(prediction[0]))
+    return render_template('app/templates/home.html', prediction_text="MEDV {}".format(prediction[0]))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
