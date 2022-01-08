@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template, url_for
 import joblib
 
 app = Flask(__name__)
-model = joblib.load('Dragon.joblib')
+model = joblib.load('app/Dragon.joblib')
 
 
 @app.route('/')
